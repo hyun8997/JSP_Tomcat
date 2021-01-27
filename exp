@@ -3,16 +3,19 @@
 hello.jsp, hi.jsp     실험
 scriptletEx01.jsp     스크립틀릿
 scriptletEx02.jsp     스크립틀릿에서 메소드 선언하는 것
-scriptletEx03.jsp     
-
-
-
-
-
-
-
-
-
+scriptletEx03.jsp     선언문이 먼저 인식되는 것
+[w20210127]
+scriptletEx04.jsp     변수 선언도 선언문 내에서 하는것 권장, 서버(was) 구동 후 파일 추가하면 서버 다시 구동해야 함
+scriptletEx05.jsp     웹 브라우저는 개행이라는 명령을 따로 주어야 한다.
+scriptletEx06.jsp     현재 시각 표시
+scriptletEx07.jsp     배열로 영화 포스터 출력
+request.jsp           URL : 웹 상에서 서비스를 제공하는 각 서버 안에 있는 파일들의 위치	
+                      URI : URL에서 HTTP 프로토콜, 호스트명, 포트번호를 제외한 나머지 정보
+response.jsp          태그, 스크립트를 통한 네이버페이지 이동
+out.jsp               out.println은 소스를 개행해서 보내는 것, 웹 브라우저에서 HTML 개행 따로 처리해줘야 함
+application.jsp       서블릿 컨테이너 정보
+sendMsg.jsp           데이터를 post로 보내기
+receiveMsg.jsp        데이터를 받아서 출력하기, utf-8로 해야 한글 잘 동작함
 
 
 
