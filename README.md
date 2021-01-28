@@ -17,3 +17,4 @@ Jsp, Tomcat using Eclipse
   2-2. 연동 다이나믹 웹프로젝트 만들기 
   2-3. 웹 크롬으로 설정
   2-4. emmet 설치, jsp추가
+  2-5. WEB-INF\lib에 ojdbc6.jar 복붙
