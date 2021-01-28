@@ -27,7 +27,7 @@ response.jsp          태그, 스크립트를 통한 네이버페이지 이동
 out.jsp               out.println은 소스를 개행해서 보내는 것, 웹 브라우저에서 HTML 개행 따로 처리해줘야 함
 application.jsp       서블릿 컨테이너 정보
 sendMsg.jsp           데이터를 get으로 보내기, 가려야 한다면 post로 할것, 인풋에서 서브밋 말고 버튼 스크립트 처리 권장
-receiveMsg.jsp        데이터를 받아서 출력하기, utf-8로 해야 한글 잘 동작함
+receiveMsg.jsp        데이터를 받아서 출력하기, utf-8로 해야 한글 잘 동작함-보내는 쪽에서만 해도 동작하는 것 확인 함
 [w20210128]
 sum.jsp               WAS는 scriptlet, script, html순으로 읽어옴
 ckhobby.jsp           취미 체크박스
