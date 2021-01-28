@@ -1,3 +1,15 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+jQuery : 자바 스크립트 잘 되어있는 것 모은 라이브러리
+기본 문법은 $    Basic syntax is: $(selector).action()
+
+
+
+
+
+
+
+
+
 [w20210126]
 *JSP                  JSP에 대한 설명
 hello.jsp, hi.jsp     실험
@@ -14,15 +26,22 @@ request.jsp           URL : 웹 상에서 서비스를 제공하는 각 서버 �
 response.jsp          태그, 스크립트를 통한 네이버페이지 이동
 out.jsp               out.println은 소스를 개행해서 보내는 것, 웹 브라우저에서 HTML 개행 따로 처리해줘야 함
 application.jsp       서블릿 컨테이너 정보
-sendMsg.jsp           데이터를 post로 보내기
+sendMsg.jsp           데이터를 get으로 보내기, 가려야 한다면 post로 할것, 인풋에서 서브밋 말고 버튼 스크립트 처리 권장
 receiveMsg.jsp        데이터를 받아서 출력하기, utf-8로 해야 한글 잘 동작함
-
-
-
-
-
-
-
+[w20210128]
+sum.jsp               WAS는 scriptlet, script, html순으로 읽어옴
+ckhobby.jsp           취미 체크박스
+resultHobby.jsp       ckhobby.jsp 에서 box 받아와서 출력하기
+selectOption.jsp      구구단 선택바,      jQuery : 자바 스크립트 잘 되어있는 것 모은 라이브러리 사용
+prtGuGuDan.jsp        selectOption.jsp에서 받은 단 출력
+selectDept.jsp        웹 브라우저에서 Dept table DBMS에서 접속(백엔드), scriptlet이랑 html이랑(jsp) 잘 섞어서 쓸 수 있어야 함
+<d20210128>
+HelloServlet.java     Servlet : 웹에서 동작하는 작은 자바 프로그램, extends HttpServlet로 넣음
+                      doGet이라는 함수 넣어서 쓸 수 있는 무언가
+                      WAS 안에 Servlet이 들어 있는 것이다.
+connTest.java         JDBC 연결 확인용
+DeptMain.java         DBMS 연결, Dept table
+EmpMain.java          DBMS 연결, Emp table
 
 
 
