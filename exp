@@ -42,14 +42,15 @@ HelloServlet.java     Servlet : 웹에서 동작하는 작은 자바 프로그�
 connTest.java         JDBC 연결 확인용
 DeptMain.java         DBMS 연결, Dept table
 EmpMain.java          DBMS 연결, Emp table
+[w20210129]
 
 
 
-
-
-
-
-
+<d20210129>
+DeptVO.java           VO (Value Object) : DBMS에서 되돌려주는 레코드 1개의 데이터를 담을 수 있는 객체
+DeptDAO.java          DAO(Data Access Object) : DB에 쉽게 접근하기 위한 객체
+                      DB table 마다 VO랑 DAO를 만들도록 할것임
+DeptMain.java         DAO test용 main
 
 
 
