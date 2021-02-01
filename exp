@@ -51,7 +51,8 @@ DeptVO.java           VO (Value Object) : DBMS에서 되돌려주는 레코드 1
 DeptDAO.java          DAO(Data Access Object) : DB에 쉽게 접근하기 위한 객체
                       DB table 마다 VO랑 DAO를 만들도록 할것임
 DeptMain.java         DAO test용 main
-
+[w20210201]
+사이트에서 회원가입하고 하는 부분들을 총집라했음
 
 
 
