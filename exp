@@ -2,12 +2,21 @@
 jQuery : 자바 스크립트 잘 되어있는 것 모은 라이브러리
 기본 문법은 $    Basic syntax is: $(selector).action()
 
+VO라는 객체를 통해 setter getter로 데이터를 주고받을 수 있도록 함
+DAO 객체를 통해 DB에 접근, CRUD(Create, Read, Update, Delete) 작업을 할 수 있도록 함
+OracleXEConnection라는 싱글톤 접속 방법을 만들어서 DAO에서 사용함
 
 
 
 
 
 
+<vo>          VO 파일들을 저장
+<dao>         DAO 파일들을 저장
+<connection>  DAO에서 매번 url과 driver를 쓰기 힘드므로 생성(같은 계정 계속), 싱글톤 패턴으로 쓰겠다.
+<test>        DAO등 커넥션 테스트등
+  ProductMain.java(20210202)      ProductVO랑 ProductDAO를 만든 후 테스트용 메인, 싱글톤 생성해서 DAO의 생성자에서 커넥트 부분 한줄로 줄인것 확인!!!
+  InsertProduct.java              Product 추가
 
 
 [w20210126]
@@ -53,8 +62,13 @@ DeptDAO.java          DAO(Data Access Object) : DB에 쉽게 접근하기 위한
 DeptMain.java         DAO test용 main
 [w20210201]
 사이트에서 회원가입하고 하는 부분들을 총집라했음
-
-
+[w20210202]
+sql_table_product     홈페이지에서 사용할 제품 관련 테이블, 시퀀스 sql문
+   <test> ProductMain.java      ProductVO랑 ProductDAO를 만든 후 테스트용 메인, 싱글톤 생성해서 DAO의 생성자에서 커넥트 부분 한줄로 줄인것 확인!!!
+          InsertProduct.java    Product 추가
+productList.jsp       product 올리는 홈페이지, pno를 productDetail.jsp에 넘겨줄 수 있게 해놓음, 
+productDetail.jsp     list페이지에서 제품 사진을 누르면 디테일 보여주는 페이지, jquery를 통해 데이터를 전달(form tag로 받아옴)
+cart.jsp              장바구니 버튼 누르면 데이터 받음
 
 
 
