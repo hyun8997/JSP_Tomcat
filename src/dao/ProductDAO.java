@@ -140,8 +140,86 @@ public class ProductDAO {
 	}
 	
 	
+	// 상품 정보를 조회 - 개별 상품 이름 - getDataByName()
+	public ProductVO getDataByName(String pname) {
+		sb.setLength(0);
+		sb.append("select * from product ");
+		sb.append("where pname = ? ");
+		
+		ProductVO vo = null;
+		
+		try {
+			pstmt = conn.prepareStatement(sb.toString());
+			pstmt.setNString(1, pname);
+			
+			rs = pstmt.executeQuery();
+			
+			rs.next();
+			
+			int pno = rs.getInt(1);
+			int price = rs.getInt(3);
+			int dcratio = rs.getInt(4);
+			String prodesc = rs.getNString(5);
+			int qty = rs.getInt(6);
+			String imgFile = rs.getNString(7);
+			String bigImgFile = rs.getNString(8);
+			
+			vo = new ProductVO(pno, pname, price, dcratio, prodesc, qty, imgFile, bigImgFile);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return vo;
+	}// getDataByName() end
 	
 	
+	// 새롭게 추가한 상품의 정보를 변경 - 가격, 할인율, 수량 - modifyData()
+	public int modifyData(int pno, int price, int dcratio, int qty) {
+		sb.setLength(0);
+		sb.append("update product ");
+		sb.append("set price = ?, dcratio = ?, qty = ? ");
+		sb.append("where pno = ? ");
+		
+		int result = -1;
+		
+		try {
+			pstmt = conn.prepareStatement(sb.toString());
+			pstmt.setInt(1, price);
+			pstmt.setInt(2, dcratio);
+			pstmt.setInt(3, qty);
+			pstmt.setInt(4, pno);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}// modifyData() end
+	
+	
+	// 새롭게 추가한 상품을 삭제 - deleteData()
+	public int deleteData(int pno) {
+		sb.setLength(0);
+		sb.append("delete product ");
+		sb.append("where pno = ? ");
+		
+		int result = -1;
+		
+		try {
+			pstmt = conn.prepareStatement(sb.toString());
+			pstmt.setInt(1, pno);
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}// deleteData() end
 	
 	
 	
