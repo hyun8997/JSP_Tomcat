@@ -62,6 +62,7 @@ DeptDAO.java          DAO(Data Access Object) : DB에 쉽게 접근하기 위한
 DeptMain.java         DAO test용 main
 [w20210201]
 사이트에서 회원가입하고 하는 부분들을 총집라했음
+embededObject.jsp     여기에 페이지 넘어가는 방식등 정리
 [w20210202]
 sql_table_product     홈페이지에서 사용할 제품 관련 테이블, 시퀀스 sql문
    <test> ProductMain.java      ProductVO랑 ProductDAO를 만든 후 테스트용 메인, 싱글톤 생성해서 DAO의 생성자에서 커넥트 부분 한줄로 줄인것 확인!!!
