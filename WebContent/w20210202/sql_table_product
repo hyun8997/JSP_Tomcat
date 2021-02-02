@@ -1,0 +1,30 @@
++ product
+
+pno(pk) pname price dcratio prodesc qty imgfile bigimgfile
+
+JAVA랑 DB가 데이터를 전달하려면 기본적으로 I/O이고 이는 잘게 쪼개서 보내는 Stream 방식이다. (byte단위)
+그림은 byte 단위가 아닌 pixel 단위의 큰 데이터이므로 이미지의 주소를 DB에 넣어 byte단위로 사용하도록 해준다.
+
+PNO에 PK 걸어둠, Primary keys must contain UNIQUE values, and cannot contain NULL values.
+DB는 정렬을 하지 않아서 PK를 통해서 중복없는 변수로 누가 누구인지를 정확하게 인지할 수 있도록 한다.
+
+
+CREATE TABLE PRODUCT
+(PNO NUMBER(10) CONSTRAINT PRODUCT_PNO_PK PRIMARY KEY,		-- 상품 번호를 시리얼로 하는건 자바단에서 하는것이 맞지만 DB서 그냥 시퀀스 줌
+PNAME VARCHAR2(20),
+PRICE NUMBER(10),
+DCRATIO NUMBER(3),
+PRODESC VARCHAR2(2000),
+QTY NUMBER(7),
+IMGFILE VARCHAR2(100),
+BIGIMGFILE VARCHAR2(100));
+
+
+CREATE SEQUENCE PRODUCT_PNO_SEQ		-- PK 걸어둔거에 맞춰둔 시퀀스, 시퀀스는 자동생성, 중간에 번호가 비어도 될 때
+START WITH 1
+INCREMENT BY 1
+MINVALUE 1
+NOCACHE
+NOCYCLE;
+
+
