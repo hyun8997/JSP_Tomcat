@@ -70,8 +70,8 @@ sql_table_product     홈페이지에서 사용할 제품 관련 테이블, 시�
 productList.jsp       product 올리는 홈페이지, pno를 productDetail.jsp에 넘겨줄 수 있게 해놓음, 
 productDetail.jsp     list페이지에서 제품 사진을 누르면 디테일 보여주는 페이지, jquery를 통해 데이터를 전달(form tag로 받아옴)
 cart.jsp              장바구니 버튼 누르면 데이터 받음
-
-
+[w20210203]
+sql_table_board       
 
 
 
