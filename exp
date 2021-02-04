@@ -72,22 +72,54 @@ productDetail.jsp     list페이지에서 제품 사진을 누르면 디테일 �
 cart.jsp              장바구니 버튼 누르면 데이터 받음
 [w20210203]
 sql_table_board       
-그냥 BoardDAO 사용
+BoardDAO 사용, 이후 board를 개선, 페이지 나눔 기능 추가, BoardV2_DAO 사용
 [w20210204]
-03일의 board를 개선, 페이지 나눔
-BoardV2_DAO 사용
+summernote를 다운받아서 내 board 프로젝트에 넣기, https://summernote.org/getting-started/#embed에 설명 있음
 
+  아래의 것을 인클루드 해놔야 됨
+  <!-- include libraries(jQuery, bootstrap) -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+  <!-- include summernote css/js -->
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
+  서머노트를 다운받아서 내 프로젝트에 넣고 아래와 같이 https 인터넷에서 받아오는 방식 대신 내 경로를 넣어서 커스터마이징 할 수 있도록 해둔다.
+  <!-- include summernote css/js -->
+  <link href="../summernote/summernote.min.css" rel="stylesheet">
+  <script src="../summernote/summernote.min.js"></script>
 
+  아래의 공간에 쓸 수 있다.
+  <div id="summernote">Hello Summernote</div>
 
-
-
-
-
-
-
-
+  이 jquery 함수를 script 안에 써야 구동이 된다
+  $(document).ready(function() {
+    $('#summernote').summernote();
+  });
+  이걸 더 추천함
+  $(document).ready(function(){
+		$('#summernote').summernote({
+	        placeholder: 'Hello Summernote',
+	        tabsize: 2,
+	        height: 100
+	    });
+	});
+  
+  요 녀석을 추가하면 한국어 설명(?) 부여됨 - 서머노트 다운 받은 파일 내에 언어들 있음
+  <!-- include summernote-ko-KR -->
+  <script src="../summernote/lang/summernote-ko-KR.js"></script>
+  
+  함수 안에 lang 추가
+  $(document).ready(function(){
+		$('#summernote').summernote({
+	        placeholder: 'Hello Summernote',
+	        tabsize: 2,
+	        height: 100,
+	        lang: 'ko-KR'	// default: 'en-US'
+	    });
+	});
 
 
 
