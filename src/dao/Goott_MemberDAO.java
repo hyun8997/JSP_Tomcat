@@ -105,7 +105,43 @@ public class Goott_MemberDAO {
 				e.printStackTrace();
 			}
 			return list;		
+			
 		}// selectAll() end
+		
+		
+		//존재하는 회원인지 여부를 확인하는 메소드 - (id, pw)
+		public boolean isExist(String id, String pw) {
+			sb.setLength(0);
+			sb.append("select * from goott_member ");
+			sb.append("where id = ? and pw = ? ");
+			
+			boolean isOk = false;
+			
+			try {
+				pstmt = conn.prepareStatement(sb.toString());
+				pstmt.setNString(1, id);
+				pstmt.setNString(2, pw);
+				
+				rs = pstmt.executeQuery();
+				
+				isOk = rs.next();
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return isOk;
+		}// isExist() end
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	
 		// 자원반납
@@ -119,6 +155,10 @@ public class Goott_MemberDAO {
 					e.printStackTrace();
 				}
 		}// close() end
+		
+		
+		
+		
 	
 }
 
