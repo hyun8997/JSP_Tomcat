@@ -1,0 +1,39 @@
++ 게시판 (board)
+
+게시글번호(pk)  제목  내용  작성자  작성일  IP  status  조회수 
+
+CREATE TABLE BOARD
+(BNO NUMBER(10) CONSTRAINT BOARD_BNO_PK PRIMARY KEY,
+TITLE VARCHAR2(100),		-- 원래는 NOT NULL 해야 함
+WRITER VARCHAR2(30), 		-- 원래는 NOT NULL 해야 함
+CONTENTS CLOB,				-- 그림 등 많은 데이터를 받기 위해 CLOB으로
+REGDATE DATE,				-- 시각만 필요하면 문자로 해도 됨
+IP VARCHAR2(16),
+STATUS NUMBER(2),			-- 상태 정보는 기호로 나타내는게 편할 것이다.
+HITS NUMBER(5));
+
+
+CREATE SEQUENCE BOARD_BNO_SEQ
+START WITH 1
+INCREMENT BY 1
+MINVALUE 1
+NOCYCLE
+NOCACHE;
+
+
+
+select * 
+		from ( 
+            select rownum rn, empno,ename,sal
+            from(select * from emp
+                   order by sal desc)
+                    where rownum <=5)
+                where rn >=3; *
+
+
+
+
+
+
+
+
